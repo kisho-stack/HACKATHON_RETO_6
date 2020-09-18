@@ -236,7 +236,20 @@ class Notas:
         except Exception as e:
             print(f'{str(e)}')
     
-    
+    def fetchall_notas(self):
+        try:
+            conn = Connection()
+            query = '''
+                SELECT * FROM notas
+                ORDER by nota DESC;
+            '''
 
-
+            cursor = conn.execute_query(query)
+            rows = cursor.fetchall()
             
+            for row in rows:
+                print(f'ID = {row[0]}')
+                print(f'Notas = {row[1]}')
+                print('=====================')
+        except Exception as e:
+            print(f'{str(e)}')

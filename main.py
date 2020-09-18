@@ -17,7 +17,8 @@ def menu():
     print('\t8 -  Ver Docentes')
     print('\t9 -  Ver Alumnos') 
     print('\t10 - Ver Salones')
-    print('\t11 - Salir')
+    print('\t11 - Ver Notas')
+    print('\t12 - Salir')
 
 
 def continuar(error=False):
@@ -160,8 +161,16 @@ try:
            
             if continuar(): pass
             else: break
-                   
+            
         elif opcion_menu == "11":
+                        
+            notas = Notas('')
+            notas.fetchall_notas()  #Se imprime nota de mayor a menos
+           
+            if continuar(): pass
+            else: break
+                   
+        elif opcion_menu == "12":
             break
         else:
             if continuar(True): pass
